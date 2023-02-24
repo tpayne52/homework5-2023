@@ -1,0 +1,137 @@
+/*Step 2 - Default mode*/
+
+#logo { animation: mymove 5s 1;}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: mymove 5s 0;
+    }
+}
+
+@keyframes mymove {
+    0%  {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+/* Step 3 */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Step 4 */
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+/* Step 5 */
+
+li a:visited {
+    color: blue;
+}
+
+/* Step 6 */
+.card > header {
+    background: #288088;
+    border: solid 2px #45adad;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/* Step 7 & 8 */
+.card {
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Step 9 */
+.gallery > img{
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+/* Step 10 */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    /* Step 13 */
+    .skip + header{
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    /**/
+
+}
+
+
+@media print {
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    nav {
+        width: 100%
+    }
+    
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .gallery > img {
+        display: none;
+    }
+
+    main li:first-of-type + li:after {
+        content: "👍";
+    }
+}
